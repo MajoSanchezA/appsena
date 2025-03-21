@@ -1,10 +1,140 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  /* Contenedor principal */
+  main {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Contenido principal más ancho */
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Encabezado */
+  header {
+    background: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    grid-column: span 2;
+  }
+  
+  /* Navegación */
+  nav {
+    background: #444;
+    padding: 0.5rem;
+    text-align: center;
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: #666;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  nav a:hover {
+    background: #888;
+  }
+  
+  /* Contenido principal */
+  section {
+    padding: 2rem;
+  }
+  
+  article {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Barra lateral */
+  aside {
+    background: #ffcc00;
+    padding: 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Pie de página */
+  footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    grid-column: span 2;
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 900px) {
+    main {
+      grid-template-columns: 1fr; /* Cambia a una columna */
+    }
+  
+    aside {
+      background: #ff9900; /* Color diferente en pantallas más pequeñas */
+      padding: 1rem;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav a {
+      width: 80%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    main {
+      padding: 0.5rem;
+    }
+  
+    section {
+      padding: 1rem;
+    }
+  
+    article {
+      padding: 1rem;
+    }
+  
+    nav a {
+      width: 100%;
+    }
+  }
+  
